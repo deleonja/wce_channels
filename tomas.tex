@@ -1,1 +1,162 @@
-\section{Tomás}
+\newpage
+\section*{Tomás}
+%
+\section{Matrices de Weyl y sus propiedades}
+Se definen las matrices de Weyl como:
+\begin{align*}
+U_{mn} = \sum_{k = 0}^{d-1} \omega_d^{km} |k\rangle \langle k \oplus n |,
+\end{align*}
+con $\omega_d = \exp(2\pi  i /d)$. Se pueden demostrar algunas propiedades de las matrices de Weyl, entre ellas se demuestra que:
+\begin{align*}
+U_{mn} U_{pq} U_{mn}^{\dagger} & = \sum_{k = 0}^{d-1} \omega_d^{km} |k\rangle \langle k \oplus n |   \sum_{j = 0}^{d-1} \omega_d^{jp} |j\rangle \langle j \oplus q |   \sum_{l = 0}^{d-1} \omega_d^{-lm} | l \oplus n\rangle \langle l| \\
+& = \sum_{k,j,l=0}^{d-1} \omega_d^{km+jp-lm} |k \rangle \langle k \oplus n| j \rangle \langle j \oplus q | l \oplus n| \langle l | \\
+& = \sum_{k,j,l=0}^{d-1} \omega_d^{km+jp-lm} \; \delta_{k\oplus n, j} \delta_{j\oplus q, l \oplus n} |k \rangle \langle l | \\
+& = \sum_{k,l=0}^{d-1} \omega_d^{km + (k + n)p - lm} \delta_{k \oplus n \oplus q , l \oplus n} |k \rangle \langle l | \\
+&= \sum_{k=0}^{d-1} \omega_d^{km + (k+n)p - (k+q)m} |k \rangle \langle k \oplus q | \\
+& = \sum_{k=0}^{d-1} \omega_d^{np-mq} \sum_{k=0}^{d-1} \omega_d^{kp} |k \rangle \langle k \oplus q | \\
+&=  \omega_d^{np-mq} U_{pq} 
+\end{align*}
+Es decir, concluimos que
+\begin{align}
+\label{conmutación matrices de Weyl}
+U_{mn} U_{pq} U_{mn}^{\dagger}  = \omega_d^{np-mq} U_{pq} 
+\end{align}
+
+\section{Mapas de Weyl y diagonalización}
+En esta parte definimos los mapas de Weyl y los diagonalizamos. Es una forma diferente de probarlo y faltan algunos detalles, pero es al menos una comprobación de la diagonalización de Alejo y a lo mejor incluye ideas útiles. 
+
+Para empezar, una matriz de densidad se puede escribir como
+\begin{align}
+\label{mat densidad}
+\rho = \sum_{m,n=0}^{d-1} \alpha_{mn} U_{mn}
+\end{align}
+y un canal de Weyl se define como
+\begin{align}
+\label{forma de bloch}
+\rho \rightarrow \rho' = \varepsilon(\rho) = \sum_{m,n = 0}^{d-1} \tau_{mn} \alpha_{mn} U_{mn}
+\end{align}
+Sin embargo, los canales de Weyl se pueden escribir de forma alternativa utilizando la forma de Kraus:
+\begin{align}
+\label{Forma de Kraus}
+\varepsilon(\rho) = \sum_{m,n=0}^{d-1} k_{mn} U_{mn} \rho U_{mn}^{\dagger}.
+\end{align}
+Haría falta probar que efectivamente todos los canales de Weyl se pueden escribir así y que todos los canales escritos así son de Weyl, pero sé por lo menos que para el caso de qubits (canales de Pauli) se cumple. La ventaja de esta representación es que el canal es completamente positivo si y sólo si $k_{mn} \geq 0$ para toda $m,n$.
+
+Entonces, buscamos ahora una relación entre  las $k$ y las $\tau$, para lo cual partimos de \ref{Forma de Kraus} y sustituimos la expresión de $\rho$:
+\begin{align*}
+\varepsilon(\rho) &= \sum_{m,n=0}^{d-1} k_{mn} U_{mn} \rho U_{mn}^{\dagger} = \sum_{m,n=0}^{d-1} k_{mn} U_{mn}  \sum_{p,q=0}^{d-1} \alpha_{pq} U_{pq} U_{mn}^{\dagger} \\ 
+& = \sum_{m,n,p,q=0}^{d-1} k_{mn} \alpha_{pq} U_{mn} U_{pq} U_{mn}^{\dagger}  = \sum_{m,n,p,q=0}^{d-1} k_{mn} \alpha_{pq} \omega_d^{np-mq} U_{pq} \;\;\; \text{por (\ref{conmutación matrices de Weyl})} \\
+& = \sum_{p,q=0}^{d-1} \left( \sum_{m,n=0}^{d-1} k_{mn} \omega_d^{np-mq} \right) \alpha_{pq} U_{pq}
+\end{align*}
+Vemos que el resultado vuelve a tener la forma de \ref{mat densidad}, pero con los componentes $\alpha_{pq}$ multiplicados por el término entre paréntesis, por lo que concluimos que este término es $\tau_{pq}$, es decir:
+\begin{align}
+\tau_{pq} = \sum_{m,n=0}^{d-1} k_{mn} \omega_d^{np-mq}
+\end{align}
+Esta expresión se puede voltear multiplicando ambos lados por $\omega_d^{lq-jp}$ y sumando sobre $p, q$, con lo que nos queda:
+\begin{align*}
+\sum_{p,q=0}^{d-1} \tau_{pq} \omega_d^{lq-jp} = \sum_{m,n,p,q=0}^{d-1} k_{mn} \omega_d^{np-mq} \omega_d^{lq-jp} = \sum_{m,n,p,q=0}^{d-1} k_{mn} \omega_d^{p(n-j)} \omega_d^{q(l-m)}
+\end{align*}
+La suma sobre $p$ se puede hacer usando que $\sum_p \omega_d^{p(n-j)} = d \delta_{nj}$ y similarmente sobre $q$ se usa que $\sum_q \omega_d^{q(l-m)} = d \delta_{lm}$.  Entonces nos queda que:
+\begin{align*}
+\sum_{p,q=0}^{d-1} \tau_{pq} \omega_d^{lq-jp} & = d^2 \sum_{m,n=0}^{d-1} k_{mn} \delta_{n,j} \delta_{l,m} = d^2 k_{lj}
+\end{align*}
+y concluimos que
+\begin{align}
+\label{k en terminos de lambda}
+k_{lj} & =  \dfrac{1}{d^2} \sum_{p,q=0}^{d-1} \tau_{pq} \omega_d^{lq-jp} 
+\end{align}
+Vemos que este resultado difiere de las lambdas encontradas en la diagonalización de Alejo sólo por un factor de $d$.
+Como las $k$ tienen que ser mayor o iguales a $0$ para que el canal sea completamente positivo y como las lambdas difieren de las $k$ sólo por un factor de $d$,  la conclusión sobre qué canales son válidos es la misma que cuando se hace la diagonalización. 
+
+
+Regresamos ahora a la diagonalización obtenida por Alejo  y encontramos algunas otras ecuaciones que usaremos luego. Dicha diagonalización dice que:
+\begin{align*}
+\lambda_{kl} = \dfrac{1}{d} \sum_{\mu \nu = 0}^{d-1} \tau_{\mu \nu} \omega_d^{k \nu - \mu l}
+\end{align*}
+Esta expresión se puede voltear de forma similar a lo que se hizo para obtener \ref{k en terminos de lambda} y resulta que:
+\begin{align}
+\label{tau en termino de lambda}
+\tau_{pq} = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm}
+\end{align}
+A partir de esta expresión, podemos hacer $p=q=0$, con lo que nos queda:
+\begin{align*}
+\tau_{00} = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^0,
+\end{align*}
+como $\tau_{00}=1$, concluimos que:
+\begin{align}
+\label{suma-lambdas}
+\sum_{mn}^{d-1}\lambda_{mn} = d
+\end{align}
+
+\section{Generalización de canales WCE}
+
+Vamos a definir canales parecidos a WCE pero generalizados para permitir valores de $\tau$ distintos. \\
+
+\textbf{Definición Canales WCE generalizados (WCEG):} Definimos un canal WCEG (o cambiar el nombre por uno mejor) como un canal de Weyl en el cual los multiplicadores $\tau_{mn}$ cumplen que $|\tau_{mn}|= 1$.  Es decir, los multiplicadores se encuentran en el círculo unitario. Notar que no incluyo por ahora que $\tau_{mn} = 0$, pero a lo mejor se puede agregar luego. \\
+
+
+
+
+
+\subsection{Propiedades de WCEG}
+
+
+
+\textbf{Teorema 1:} \textit{En un canal de Weyl, si $|\tau_{pq}| = 1$, entonces $\tau_{pq} = \omega_d^{k}$ para algún entero $k$. Por lo tanto, los únicos multiplicadores que hay que tomar en cuenta en canales WCEG son los que sean raíces $d$-ésimas de la unidad.} \\
+
+\textbf{Dem:} Suponemos que $|\tau_{pq}|=1 $ y partiendo de \ref{tau en termino de lambda}, tenemos que
+\begin{align*}
+& \tau_{pq} = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm} .
+\end{align*}
+Entonces, $\tau_{pq}$ es una suma convexa de varias raíces d-ésimas de la unidad (convexa porque la suma de los coeficientes $\lambda_{mn}/d$ es igual a $1$). Entonces, los posibles valores de $\tau_{pq}$ se encuentran en la envoltura convexa de estas raíces, lo cual forma un polígono regular de $d$ lados. Este polígono intersecta al círculo unitario solamente en sus vértices, que son las raíces d-ésimas de la unidad. Por lo tanto, si $\tau_{pq}$ se encuentra en el círculo unitario, tiene que ser una raíz d-ésima de la unidad.  $ \blacksquare$  \\
+
+Por lo tanto, en los canales WCEG se puede considerar que los multiplicadores $\tau$ son siempre raíces de la unidad. \\
+
+Con estos resultados podemos probar un lema que luego nos lleva a un teorema:\\
+
+
+
+
+\textbf{Lema:} \textit{$\tau_{pq} = \omega_d^k$ (es decir, es una raíz $d$-ésima de la unidad) si  y sólo si $\lambda_{mn} = 0$ para todo $mn$ con $\omega_d^{pn-qm} \neq \omega_d^k$} \\
+
+\textbf{Ida:}  Partiendo de \ref{tau en termino de lambda}, tenemos que:
+\begin{align*}
+& \omega_d^k = \tau_{pq}  \; \Rightarrow \; \omega_d^k = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm} \\
+& \Rightarrow \; d = \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{-k} \omega_d^{pn-qm} \\
+& \Rightarrow \; 0 = \sum_{mn}^{d-1} \omega_d^{-k} \omega_d^{pn-qm} - \sum_{mn=0}^{d-1}\lambda_{mn} \;\; \text{por (\ref{suma-lambdas})} \\
+& \Rightarrow \; 0 = \sum_{mn=0}^{d-1} \lambda_{mn} \left( \omega_d^{pn-qm-k} - 1 \right) 
+\end{align*}
+Como $\lambda_{mn} \geq 0$ para toda $mn$ (por completa positividad) y $\omega_d^{pn-qm-k} - 1$ tiene parte real menor o igual a $0$, entonces $\lambda_{mn} \left( \omega_d^{pn-qm-k} - 1 \right) $ tiene parte real menor o igual a $0$ y para que sumar sobre todas las $mn$ nos dé $0$, todos los sumandos tienen que ser $0$:
+\begin{align*}
+& \lambda_{mn} \left( \omega_d^{pn-qm-k} - 1 \right) = 0
+\end{align*}
+Entonces, si $\omega_d^{pn-qm-k} \neq 1$, se debe de tener que $\lambda_{mn} = 0$, que es lo que se quería probar. \\
+
+\textbf{Regreso:} Consideramos que:
+\begin{align*}
+\tau_{pq}& = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm} \\
+&= \dfrac{1}{d} \sum_{mn | \omega_d^{pn-qm} = \omega_d^k} \lambda_{mn} \omega_d^{pn-qm} +\dfrac{1}{d} \sum_{mn | \omega_d^{pn-qm} \neq \omega_d^k} \lambda_{mn} \omega_d^{pn-qm} \\
+& = \dfrac{1}{d} \sum_{mn | \omega_d^{pn-qm} = \omega_d^k} \lambda_{mn} \omega_d^k + 0 \;\;\; \text{(por hipótesis, $ \lambda_{mn} = 0$ cuando $ \omega_d^{pn-qm} \neq \omega_d^k)$.} \\
+& =  \dfrac{1}{d} \omega_d^k \sum_{mn | \omega_d^{pn-qm} = \omega_d^k} \lambda_{mn}
+\end{align*}
+Pero como las lambdas de la suma que quedan son las únicas distintas de $0$, la ecuación \ref{suma-lambdas} implica que esta suma es igual a $d$ y por lo tanto $\tau_{pq} = \omega_d^k$. $\blacksquare$ \\
+
+\textbf{Teorema 2:}  \textit{Si $\tau_{pq} = \omega_d^k$ y $\tau_{p'q'} = \omega_d^{k'}$ (es decir, tenemos que dos taus son raíces $d$-ésimas de la unidad), entonces se tiene que $\tau_{p \oplus p' , q \oplus q'} = \tau_{pq} \tau_{p'q'} = \omega_d^{k+k'}$.} \\
+
+\textbf{Demostración:} Vamos a usar el regreso del lema, para lo que empezamos probando su hip\'otesis. Digamos que $\omega_d^{(p \oplus p') n - (q \oplus q')m} \neq \omega_d^{k+k'}$, lo que implica que $\omega_d^{p n - qm} \omega_d^{p'n - q'm} \neq \omega_d^{k+k'}$. \\
+Para que se cumpla esto, se debe de tener que $ \omega_d^{p n - qm} \neq \omega_d^k$ o bien $\omega_d^{p'n-q'm} \neq \omega_d^{k'}$. \\
+
+Si $\omega_d^{p n - qm} \neq \omega_d^k$ y como $\tau_{pq} = \omega_d^k$, la ida del lema implica que $\lambda_{mn} =0$. Por otro lado, si $\omega_d^{p'n-q'm} \neq \omega_d^{k'}$ y como $\tau_{p'q'} = \omega_d^{k'}$, la ida del lema implica que $\lambda_{mn} = 0$. En cualquier caso, concluimos que $\lambda_{mn} = 0$. \\
+
+Entonces, hemos demostrado que $\omega_d^{(p \oplus p')n - (q\oplus q')m} \neq \omega_d^{k+k'}$ implica que $\lambda_{mn} = 0$, por lo que el regreso del lema implica que $\tau_{p \oplus p', q \oplus q'} = \omega_d^{k+k'}$ $\;\; \blacksquare$. \\
+
+En particular, eso muestra que el conjunto de taus que valen 1 es cerrado bajo $\oplus$ (pues si $\tau_{pq}= 1$ y $\tau_{p'q'}=1$, el teorema dice que $\tau_{p\oplus p', q\oplus q'} = \tau_{pq} \tau_{p'q'} = 1$). 
+
+Por ahora no sé qué más se puede concluir del teorema en general. Tengo la hipótesis de que los canales WCEG son justo los que se obtienen cuando las taus son las columnas de la matriz $a$ (generalizada al caso de $d$ niveles, donde se  puede definir como $a_{mnpq} = \omega_{d}^{np-mq}$ y después ``colapsarla'' a dos índices).  A lo mejor eso se puede demostrar usando el teorema 2. Por lo menos para un qubit, creo que el teorema 2 implica que los únicos canales WCEG posibles son justo las columnas de la matriz $a$. 
+
+En general, se puede demostrar al menos que todas las columnas de la matriz $a$ son canales CP. Es decir, que un canal definido como $\tau_{pq} = \omega_{d}^{np-mq}$ para $n,m$ enteros cualesquiera en $[0,d]$ es completamente positivo (solamente hay que usar la diagonalización y se obtiene que todas las lambdas son $0$ excepto la $\lambda_{mn}$, que vale $d$, por lo que es CP). 
+
+Sin embargo, no sé cómo se pueda probar que los únicos canales WCEG son solamente estas columnas. Por ahora, lo probé computacionalmente iterando sobre todos los canales WCEG posibles y viendo cuales son CP según la diagonalización y resulta válido para los casos que probé ($d = 2,3,4$). 
+
+
+

@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section.1}{PCE Maps - Choi matrix}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{A single qubit}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{N qubits}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Bloch-like parametrization for a single qudit}{}% 4
+\BOOKMARK [1][-]{section.3}{Weyl maps}{}% 5
+\BOOKMARK [1][-]{section.4}{Diagonalization of the Choi Matrix}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Numerical approach on WCE maps}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Analytical derivation }{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Generalization to N qudits}{}% 9
+\BOOKMARK [1][-]{section.6}{Matrices de Weyl y sus propiedades}{}% 10
+\BOOKMARK [1][-]{section.7}{Mapas de Weyl y diagonalizaci\363n}{}% 11
+\BOOKMARK [1][-]{section.8}{Generalizaci\363n de canales WCE}{}% 12
+\BOOKMARK [2][-]{subsection.8.1}{Propiedades de WCEG}{section.8}% 13
+\BOOKMARK [1][-]{section.9}{Probando JA}{}% 14
