@@ -150,13 +150,35 @@ Si $\omega_d^{p n - qm} \neq \omega_d^k$ y como $\tau_{pq} = \omega_d^k$, la ida
 
 Entonces, hemos demostrado que $\omega_d^{(p \oplus p')n - (q\oplus q')m} \neq \omega_d^{k+k'}$ implica que $\lambda_{mn} = 0$, por lo que el regreso del lema implica que $\tau_{p \oplus p', q \oplus q'} = \omega_d^{k+k'}$ $\;\; \blacksquare$. \\
 
-En particular, eso muestra que el conjunto de taus que valen 1 es cerrado bajo $\oplus$ (pues si $\tau_{pq}= 1$ y $\tau_{p'q'}=1$, el teorema dice que $\tau_{p\oplus p', q\oplus q'} = \tau_{pq} \tau_{p'q'} = 1$). 
+En particular, eso muestra que el conjunto de taus que valen 1 es cerrado bajo $\oplus$ (pues si $\tau_{pq}= 1$ y $\tau_{p'q'}=1$, el teorema dice que $\tau_{p\oplus p', q\oplus q'} = \tau_{pq} \tau_{p'q'} = 1$).  \\
 
-Por ahora no sé qué más se puede concluir del teorema en general. Tengo la hipótesis de que los canales WCEG son justo los que se obtienen cuando las taus son las columnas de la matriz $a$ (generalizada al caso de $d$ niveles, donde se  puede definir como $a_{mnpq} = \omega_{d}^{np-mq}$ y después ``colapsarla'' a dos índices).  A lo mejor eso se puede demostrar usando el teorema 2. Por lo menos para un qubit, creo que el teorema 2 implica que los únicos canales WCEG posibles son justo las columnas de la matriz $a$. 
+Creo que con este teorema se puede probar los canales WCEG son justo los que se obtienen cuando las taus son las columnas de la matriz $a$ (generalizada al caso de $d$ niveles, donde se  puede definir como $a_{mnpq} = \omega_{d}^{np-mq}$ y después ``colapsarla'' a dos índices). Es decir, el siguiente teorema:\\
 
-En general, se puede demostrar al menos que todas las columnas de la matriz $a$ son canales CP. Es decir, que un canal definido como $\tau_{pq} = \omega_{d}^{np-mq}$ para $n,m$ enteros cualesquiera en $[0,d]$ es completamente positivo (solamente hay que usar la diagonalización y se obtiene que todas las lambdas son $0$ excepto la $\lambda_{mn}$, que vale $d$, por lo que es CP). 
+\textbf{Teorema 3:} \textit{Sólo hay $d^2$ canales WCEG válidos. Cada uno consiste en una elección de taus de la forma $\tau_{pq} = \omega_d^{np-mq}$ (columnas de la matriz $a$) para alguna elección de $m,n$ de las $d^2$ posibles.}\\
 
-Sin embargo, no sé cómo se pueda probar que los únicos canales WCEG son solamente estas columnas. Por ahora, lo probé computacionalmente iterando sobre todos los canales WCEG posibles y viendo cuales son CP según la diagonalización y resulta válido para los casos que probé ($d = 2,3,4$). 
+Para probarlo, vemos primero que solamente hay $d^2$ canales WCEG posibles. Para ver esto, notamos por el teorema 2 que si conocemos $\tau_{01}$ y $\tau_{10}$, todas las otras taus (y por tanto el canal completo) quedan determinadas. Esto debido a que cualquier $\tau_{pq}$ se va a poder calcular como productos de $\tau_{01}$ y $\tau_{10}$ usando la conclusión del teorema 2.  Como hay $d$ posibilidades para el valor de $\tau_{01}$ y de $\tau_{10}$, tenemos un total de a lo sumo  $d^2$ canales distintos. 
+
+Por otro lado, se puede demostrar que si elegimos $\tau_{pq} = \omega_d^{np-mq}$ para alguna elección de $m,n \in \{0,1, \cdots , d-1\}$, entonces estas taus definen un canal válido. Para probarlo solamente hay que usar la diagonalización y al calcular los eigenvalores se obtiene que todas las lambdas son $0$ excepto la $\lambda_{mn}$, que vale $d$, por lo que el canal es CP). Además, elecciones distintas de $n,m$ dan lugar a canales distintos, por lo que hemos encontrado $d^2$ canales distintos. 
+
+Como vimos que hay a lo sumo $d^2$ canales WCEG distintos y ya encontramos $d^2$ canales, concluimos que los canales WCEG son exactamente esos. Es decir, los canales WCEG son exactamente aquéllos de la forma $\tau_{pq}  =\omega_d^{np-mq}$ para las distintas elecciones de $m,n$. $\blacksquare$ \\ \\
+
+A lo mejor hay una forma mejor de probar este resultado y sin necesidad del teorema 2. Y también puede ser que se pueda sacar una conclusión sobre una estructura interesante que tienen estos canales al usar el teorema 2. \\
+
+Dejo aquí algunos dibujos de la matriz $a_{nmpq} = \omega_d^{np-mq}$ colapsada a dos dimensiones (en la horizontal el índice es $dm+n$ y en la vertical $dp+q$) para distintos valores de $d$. Cada entrada la pongo en un color desde el blanco para la raíz $\omega_d^0 = 1$ hasta negro para la última raíz $\omega_d^{d-1}$. Como se dijo antes, las columnas de esta matriz son los $d^2$ canales válidos, cada uno es $\tau_{pq} = \omega_d^{np-mq}$. 
 
 
-
+\begin{figure}[h!]
+    \centering
+    \subfloat[\centering $d=2$]{{\includegraphics[width=5cm]{imagenes/d2.png} }}%
+    \qquad
+    \subfloat[\centering $d=4$]{{\includegraphics[width=5cm]{imagenes/d4.png} }} \\%
+\centering
+    \subfloat[\centering $d=10$]{{\includegraphics[width=5cm]{imagenes/d10.png} }}%
+    \qquad
+    \subfloat[\centering $d=12$]{{\includegraphics[width=5cm]{imagenes/d12.png} }}\\%
+\centering
+\subfloat[\centering $d=13$]{{\includegraphics[width=5cm]{imagenes/d13.png} }}%
+    \qquad
+    \subfloat[\centering $d=17$]{{\includegraphics[width=5cm]{imagenes/d17.png} }}%
+\end{figure}
+\FloatBarrier
