@@ -1,7 +1,6 @@
-\newpage
 \section*{Tomás}
 %
-\section{Matrices de Weyl y sus propiedades}
+\section{Matrices de Weyl y sus propiedades} % {{{
 Se definen las matrices de Weyl como:
 \begin{align*}
 U_{mn} = \sum_{k = 0}^{d-1} \omega_d^{km} |k\rangle \langle k \oplus n |,
@@ -22,7 +21,8 @@ Es decir, concluimos que
 U_{mn} U_{pq} U_{mn}^{\dagger}  = \omega_d^{np-mq} U_{pq} 
 \end{align}
 
-\section{Mapas de Weyl y diagonalización}
+% }}}
+\section{Mapas de Weyl y diagonalización} % {{{
 En esta parte definimos los mapas de Weyl y los diagonalizamos. Es una forma diferente de probarlo y faltan algunos detalles, pero es al menos una comprobación de la diagonalización de Alejo y a lo mejor incluye ideas útiles. 
 
 Para empezar, una matriz de densidad se puede escribir como
@@ -88,11 +88,18 @@ como $\tau_{00}=1$, concluimos que:
 \sum_{mn}^{d-1}\lambda_{mn} = d
 \end{align}
 
-\section{Generalización de canales WCE}
+% }}}
+\section{Generalización de canales WCE} % {{{
 
-Vamos a definir canales parecidos a WCE pero generalizados para permitir valores de $\tau$ distintos. \\
+Vamos a definir canales parecidos a WCE pero generalizados para permitir
+valores de $\tau$ distintos. 
 
-\textbf{Definición Canales WCE generalizados (WCEG):} Definimos un canal WCEG (o cambiar el nombre por uno mejor) como un canal de Weyl en el cual los multiplicadores $\tau_{mn}$ cumplen que $|\tau_{mn}|= 1$.  Es decir, los multiplicadores se encuentran en el círculo unitario. Notar que no incluyo por ahora que $\tau_{mn} = 0$, pero a lo mejor se puede agregar luego. \\
+\textbf{Definición Canales WCE generalizados (WCEG):} Definimos un canal WCEG
+(o cambiar el nombre por uno mejor) como un canal de Weyl en el cual los
+multiplicadores $\tau_{mn}$ cumplen que $|\tau_{mn}|= 1$.  Es decir, los
+multiplicadores se encuentran en el círculo unitario. Notar que no incluyo por
+ahora que $\tau_{mn} = 0$, pero a lo mejor se puede agregar luego. 
+\cpnote{Será bueno ver que son estos canales con fases arbitrarias para qubits.}
 
 
 
@@ -167,7 +174,7 @@ A lo mejor hay una forma mejor de probar este resultado y sin necesidad del teor
 Dejo aquí algunos dibujos de la matriz $a_{nmpq} = \omega_d^{np-mq}$ colapsada a dos dimensiones (en la horizontal el índice es $dm+n$ y en la vertical $dp+q$) para distintos valores de $d$. Cada entrada la pongo en un color desde el blanco para la raíz $\omega_d^0 = 1$ hasta negro para la última raíz $\omega_d^{d-1}$. Como se dijo antes, las columnas de esta matriz son los $d^2$ canales válidos, cada uno es $\tau_{pq} = \omega_d^{np-mq}$. 
 
 
-\begin{figure}[h!]
+\begin{figure}
     \centering
     \subfloat[\centering $d=2$]{{\includegraphics[width=5cm]{imagenes/d2.png} }}%
     \qquad
@@ -181,4 +188,6 @@ Dejo aquí algunos dibujos de la matriz $a_{nmpq} = \omega_d^{np-mq}$ colapsada 
     \qquad
     \subfloat[\centering $d=17$]{{\includegraphics[width=5cm]{imagenes/d17.png} }}%
 \end{figure}
-\FloatBarrier
+% }}}
+
+
