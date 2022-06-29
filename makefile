@@ -1,3 +1,4 @@
+notas.pdf ::
 -include ~/makefile
 
 
