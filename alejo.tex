@@ -1,6 +1,6 @@
-\section{PCE Maps - Choi matrix}
+\section{PCE Maps - Choi matrix} % {{{
 % 
-\subsection{A single qubit}
+\subsection{A single qubit} % {{{
 
 We can write any quantum state associated to a qubit in the Bloch sphere parametrization as
 % 
@@ -25,7 +25,7 @@ We now turn to find the matrix form of the map $\mathcal{E}$ in order to constru
 % \label{Map_Pauli}
 \end{equation}
 %
-where the kets $\kket{\sigma_{\alpha}}$ correspond to the vectorized elements of the Pauli basis and satisfy the usual relation $ \bbrakket{{\sigma_{\alpha}}}{{\sigma_{\alpha'}}} = \tr \left(\sigma_{\alpha}^{\dagger} \sigma_{\alpha'}\right) = 2 ~\delta_{\alpha\alpha'}$. After some steps it is possible to show that the associated Choi matrix reads
+where the kets $\kket{\sigma_{\alpha}}$ correspond to the vectorized elements of the Pauli basis and satisfy the usual relation $ \bbrakket{{\sigma_{\alpha} }}{{\sigma_{\alpha'} }} = \tr \left(\sigma_{\alpha}^{\dagger} \sigma_{\alpha'}\right) = 2 ~\delta_{\alpha\alpha'}$. After some steps it is possible to show that the associated Choi matrix reads
 % 
 \begin{equation}
  \mathcal{D} = \frac{1}{2}\sum_{\alpha=0}^{3} \tau_{\alpha} \sigma_{\alpha} \otimes \sigma_{\alpha}^*.
@@ -54,8 +54,8 @@ or more compactly $\vec{\lambda} = \sa~\vec{\tau}$, where $\sa=2^{-1}H\otimes H$
  \label{Hadd_Mat}
 \end{equation}
 % 
-
-\subsection{$N$ qubits}
+% }}}
+\subsection{$N$ qubits} % {{{
 % 
 For the case of $N$ qubits, the density matrix may be written as
 % 
@@ -76,13 +76,13 @@ with $-1\leq \tau_{\vec{\alpha}} \leq 1$.
 In this case the density matrix in vector form holds 
 % 
 \begin{equation}
- \kket{\rho}=\frac{1}{2^N}\sum_{\vec{\alpha}} r_{\vec{\alpha}} \kket{\sigma_{\vec{\alpha}}},
+ \kket{\rho}=\frac{1}{2^N}\sum_{\vec{\alpha}} r_{\vec{\alpha}} \kket{\sigma_{\vec{\alpha}} },
 \end{equation}
 % 
-where $\kket{\sigma_{\vec{\alpha}}}=\kket{\sigma_{\alpha_1}}\otimes\dots \otimes\kket{\sigma_{\alpha_N}}$, and satisfy the usual orthogonality relation $\bbrakket{{\sigma_{\vec{\alpha}}}}{{\sigma_{\vec{\alpha}'}}} = \tr \left(\sigma_{\vec{\alpha}}^{\dagger} \sigma_{\vec{\alpha}'}\right) = 2^N ~\delta_{\vec{\alpha}\vec{\alpha}'}$. The matrix representation of this map is given by
+where $\kket{\sigma_{\vec{\alpha} }}=\kket{\sigma_{\alpha_1}}\otimes\dots \otimes\kket{\sigma_{\alpha_N}}$, and satisfy the usual orthogonality relation $\bbrakket{{\sigma_{\vec{\alpha} } }}{{\sigma_{\vec{\alpha}'} }} = \tr \left(\sigma_{\vec{\alpha}}^{\dagger} \sigma_{\vec{\alpha}'}\right) = 2^N ~\delta_{\vec{\alpha}\vec{\alpha}'}$. The matrix representation of this map is given by
 % 
 \begin{equation}
-\hat{\mathcal{E}}_N = \frac{1}{2^N}\sum_{\vec{\alpha}} \tau_{\vec{\alpha}} \ddyada{\sigma_{\vec{\alpha}}}.
+\hat{\mathcal{E}}_N = \frac{1}{2^N}\sum_{\vec{\alpha}} \tau_{\vec{\alpha}} \ddyada{\sigma_{\vec{\alpha}} }.
 % \label{Map_Pauli}
 \end{equation}
 %
@@ -96,7 +96,7 @@ As in the previous case, the Choi matrix $\mathcal{D}_N$ may be written in terms
 After several steps, it is possible to prove that analogously to the single qubit case, $\mathcal{D}_N$ is diagonal in the $N$-qubits Pauli basis
 %
 \begin{equation}
- \mathcal{D}_N \kket{\sigma_{\vec{\alpha}}}= \lambda_{\vec{\alpha}} \kket{\sigma_{\vec{\alpha}}},
+ \mathcal{D}_N \kket{\sigma_{\vec{\alpha} }}= \lambda_{\vec{\alpha}} \kket{\sigma_{\vec{\alpha} }},
 \end{equation}
 % 
 with eigenvalues $\lambda_{\vec{\alpha}}$ given by 
@@ -111,8 +111,9 @@ where
  \san=\sa^{\otimes N}=\frac{1}{2^N}\left(H\otimes H\right)^{\otimes N}=\left(\frac{H}{\sqrt{2}}\right)^{\otimes 2N}.
 \end{equation}
 %
-
-\section{Bloch-like parametrization for a single qudit}
+% }}}
+% }}}
+\section{Bloch-like parametrization for a single qudit} % {{{
 % 
 One of the ways we can generalize the Bloch parametrization for individual high dimensional quantum systems (or qudits), is to employ the so called \textit{Weyl basis} \cite{Bertlmann2008}. Under this parametrization any density matrix $\rho$ may be written as
 % 
@@ -138,8 +139,8 @@ and $\omega_d=\exp(2\pi i/d)$ is the primitive $d$-th root of unity. Note that f
 \end{figure}
 % 
 Due to the fact that the Weyl operators are not Hermitian, then the coefficients $\alpha_{mn}$ are in general complex.
-
-\section{Weyl maps}
+% }}}
+\section{Weyl maps} % {{{
 
 Consider the generalization of the Pauli maps for qudits as
 % 
@@ -174,7 +175,7 @@ From this, it can be easily seen that the matrix form of the map in Eq. \ref{Wey
 where we have used the fact that
 % 
 \begin{equation}
- \tr \left(U_{mn}^{\dagger} U_{kl}\right) = \braket{{U_{mn}}}{{U_{kl}}} = d ~\delta_{mk}\delta_{nl}.
+ \tr \left(U_{mn}^{\dagger} U_{kl}\right) = \braket{{U_{mn}} }{{U_{kl} }} = d ~\delta_{mk}\delta_{nl}.
 \end{equation}
 % 
 By substituting Eq. \ref{Ket_U} in Eq. \ref{Map_Pauli}, we obtain the matrix form of the map in the computational basis
@@ -198,10 +199,10 @@ This expression is valid for arbitrary $d$ and may provide some hints into the s
 \end{equation}
 % 
 note that in the last expression we have used one index instead of two binary ones.
-
-\section{Diagonalization of the Choi Matrix}
+% }}}
+\section{Diagonalization of the Choi Matrix} % {{{
 % 
-\subsection{Numerical approach on WCE maps}
+\subsection{Numerical approach on WCE maps} % {{{
 % 
 We carried out a first (non exhaustive) numerical approach in which we considered $\tau$ coefficients either equal to zero or one, for the case of a qutrit ($d=3$). In Table \ref{Table1}, we list the set of trace preserving channels found so far (however, by symmetry reasons I am almost sure there are no more channels).
 % 
@@ -241,8 +242,8 @@ In summary, we have 5 WCE channels on qutrits:
  \item 3 three components channels ($t_j$).
  \item 1 Identity channel ($I$).
 \end{itemize}
-
-\subsection{Analytical derivation }
+% }}}
+\subsection{Analytical derivation } % {{{
 % 
 Recalling Eq. \ref{Choi_1}, we can write the Choi matrix associated to a Weyl channel as
 % 
@@ -274,8 +275,16 @@ where $F$ is the matrix associated to a quantum Fourier transform
  F=\frac{1}{\sqrt{d}}\sum_{k,l=0}^{d-1}\omega_d^{kl}\dyad{k}{l}.
 \end{equation}
 % 
-Finally, I am almost sure that the results from the previous subsection may be obtained using the fact that $\sum_k\omega_d^{k(m-n)}=d~\delta_{mn}$.
-
-\section{Generalization to $N$ qudits}
+Finally, I am almost sure that the results from the previous subsection may be
+obtained using the fact that $\sum_k\omega_d^{k(m-n)}=d~\delta_{mn}$.
+\cpnote{Alejo, a cuales resultados se refiere?}
+% }}}
+% }}}
+\section{Generalization to $N$ qudits} % {{{
 % 
-In analogy to the problem of two level systems, the generalization to the case of arbitrary number of qudits is relatively straightforward. Work in progress...
+In analogy to the problem of two level systems, the generalization to the case
+of arbitrary number of qudits is relatively straightforward. Work in
+progress...
+% }}}
+
+
