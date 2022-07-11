@@ -1,1 +1,53 @@
 \section{Probando JA}
+
+\section{Cuáles operadores unitarios y qué hacen las filas/columnas de la $a$ de qudits}
+
+\begin{align*}\label{eq:a:qutrits}
+\left(
+\begin{array}{ccccccccc}
+ 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+ 1 & 1 & 1 & e^{-\frac{1}{3} (2 i \pi )} & e^{-\frac{1}{3} (2 i \pi )} & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & e^{\frac{2 i \pi }{3}} & e^{\frac{2 i \pi }{3}} \\
+ 1 & 1 & 1 & e^{\frac{2 i \pi }{3}} & e^{\frac{2 i \pi }{3}} & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & e^{-\frac{1}{3} (2 i \pi )} & e^{-\frac{1}{3} (2 i \pi )} \\
+ 1 & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & 1 & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & 1 & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} \\
+ 1 & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & e^{-\frac{1}{3} (2 i \pi )} & 1 & e^{\frac{2 i \pi }{3}} & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & 1 \\
+ 1 & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & 1 & e^{-\frac{1}{3} (2 i \pi )} & 1 & e^{\frac{2 i \pi }{3}} \\
+ 1 & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & 1 & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & 1 & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} \\
+ 1 & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & 1 & e^{\frac{2 i \pi }{3}} & 1 & e^{-\frac{1}{3} (2 i \pi )} \\
+ 1 & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & e^{\frac{2 i \pi }{3}} & 1 & e^{-\frac{1}{3} (2 i \pi )} & e^{-\frac{1}{3} (2 i \pi )} & e^{\frac{2 i \pi }{3}} & 1 \\
+\end{array}
+\right)
+\end{align*}
+
+La acción de un canal caracterizado por una $\tau$ que sea alguna
+de las filas o columnas de la matriz \eqref{eq:a:qutrits} 
+sobre un estado general de la forma
+\begin{align}
+\ket{\psi} = \alpha \ket{0} + \beta \ket{1} + \gamma \ket{2}
+\end{align}
+es intercambiar los estados $\ket{i}$, introducir alguna fase
+local o una combinación de ambas. Veamos un ejemplo a continuación.
+Consideremos el canal WCE 
+\begin{align}
+\vec \tau &= \qty(1, 1, 1,
+e^{\frac{2}{3}\pi i}, e^{\frac{2}{3}\pi i}, e^{\frac{2}{3}\pi i},
+e^{-\frac{2}{3}\pi i}, e^{-\frac{2}{3}\pi i}, e^{-\frac{2}{3}\pi i}) \\
+&=\qty(1,1,1,\omega,\omega,\omega,\omega^2,\omega^2,\omega^2),
+\label{eq:tau:ejemplo:1}
+\end{align}
+con $\omega=e^{\frac{2}{3}\pi i}$. Con esta $\tau$ los 
+eigenvalores de la matriz de Choi son todos cero, excepto 
+uno que es igual a uno. Es decir, el canal asociado al 
+vector $\tau$ en \eqref{eq:tau:ejemplo:1} tiene un operador 
+de Kraus y, por tanto, es una operación unitaria. 
+
+Como vimos en el ejemplo anterior, los vectores $\vec \tau$,
+en general, tienen entradas complejas. Por consiguiente, 
+construir las desigualdades $A\vec \tau \geq 0$ debe considerar
+dede considerar que las entradas $\tau_{\vec \alpha}$ son 
+complejas también.
+
+Dado que $\tau_{\vec \alpha}\in \mathbb{C}$ cambiar de base 
+a la matriz $A$ para que $A_{ij}\in \mathbb{R}$ no asegurará 
+que $A\vec \tau \in \mathbb{R}$. Recordemos que, del ejemplo
+que discutimos en \eqref{eq:tau:ejemplo:1}, las entradas 
+del vector $\vec \tau$ sí puede tomar valores complejos.
