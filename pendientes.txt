@@ -10,12 +10,12 @@ Hace falta por trabajar:
 - la acción consecutiva de dos vértices? (generadores PCE¿?)
 
 Hace falta escribir:
-- En general, ordenar las notas
-- Resumen al inicio detallando el contenido de cada sección.
-- Sobre la acción de los canales de Weyl 
+- En general, ordenar las notas - JA
+- Resumen al inicio detallando el contenido de cada sección. - JA
+- Sobre la acción de los canales de Weyl - JA
 - Escribir a manera de conclusión los resultados más importantes hasta ahora: 
-	Diagonalización de la matriz de choi (la matriz A)
-	Los puntos extremos: si la |t|<=1, entonces los canales con |t|=1 son vértices, por tanto hay d^2 canales que son las filas o columnas de A
+	Diagonalización de la matriz de choi (la matriz A) - JA
+	Los puntos extremos: si la |t|<=1, entonces los canales con |t|=1 son vértices, por tanto hay d^2 canales que son las filas o columnas de A - T
 
 
 Primero vamos a escribir y luego retomamos las tareas. 
