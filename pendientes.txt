@@ -1,0 +1,21 @@
+Las secciones más importantes: 
+2-4
+8
+
+Hace falta por trabajar:
+- trabajar en la notación de N qudits 
+- revisar numéricamente qué ocurre con 2 qutrits 
+- construir ejemplos: un análogo a PCE de 1 qudit como combinación convexa de los vértices 
+- rompimiento de entrelazamiento? 
+- la acción consecutiva de dos vértices? (generadores PCE¿?)
+
+Hace falta escribir:
+- En general, ordenar las notas
+- Resumen al inicio detallando el contenido de cada sección.
+- Sobre la acción de los canales de Weyl 
+- Escribir a manera de conclusión los resultados más importantes hasta ahora: 
+	Diagonalización de la matriz de choi (la matriz A)
+	Los puntos extremos: si la |t|<=1, entonces los canales con |t|=1 son vértices, por tanto hay d^2 canales que son las filas o columnas de A
+
+
+Primero vamos a escribir y luego retomamos las tareas. 
