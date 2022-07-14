@@ -89,12 +89,12 @@ como $\tau_{00}=1$, concluimos que:
 \end{align}
 
 % }}}
-\section{Generalización de canales WCE} % {{{
+\section{Canales con $|\tau_{\mu\nu}|=1$ y propiedades algebráicas} % {{{
 
 Vamos a definir canales parecidos a WCE pero generalizados para permitir
 valores de $\tau$ distintos. 
 
-\textbf{Definición Canales WCE generalizados (WCEG):} Definimos un canal WCEG
+\textbf{Definición, Canales con Multiplicadores de Norma Unitaria (Canales MNU):} Definimos un canal MNU
 (o cambiar el nombre por uno mejor) como un canal de Weyl en el cual los
 multiplicadores $\tau_{mn}$ cumplen que $|\tau_{mn}|= 1$.  Es decir, los
 multiplicadores se encuentran en el círculo unitario. Notar que no incluyo por
@@ -105,19 +105,28 @@ ahora que $\tau_{mn} = 0$, pero a lo mejor se puede agregar luego.
 
 
 
-\subsection{Propiedades de WCEG}
+\subsection{Propiedades de MNU}
 
 
 
-\textbf{Teorema 1:} \textit{En un canal de Weyl, si $|\tau_{pq}| = 1$, entonces $\tau_{pq} = \omega_d^{k}$ para algún entero $k$. Por lo tanto, los únicos multiplicadores que hay que tomar en cuenta en canales WCEG son los que sean raíces $d$-ésimas de la unidad.} \\
+\textbf{Teorema 1:} \textit{En un canal de Weyl, si $|\tau_{pq}| = 1$, entonces $\tau_{pq} = \omega_d^{k}$ para algún entero $k$. Por lo tanto, los únicos multiplicadores que hay que tomar en cuenta en canales MNU son los que sean raíces $d$-ésimas de la unidad.} \\
 
-\textbf{Dem:} Suponemos que $|\tau_{pq}|=1 $ y partiendo de \ref{tau en termino de lambda}, tenemos que
+\textbf{Dem:} Partiendo de \ref{tau en termino de lambda}, tenemos que
 \begin{align*}
 & \tau_{pq} = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm} .
 \end{align*}
-Entonces, $\tau_{pq}$ es una suma convexa de varias raíces d-ésimas de la unidad (convexa porque la suma de los coeficientes $\lambda_{mn}/d$ es igual a $1$). Entonces, los posibles valores de $\tau_{pq}$ se encuentran en la envoltura convexa de estas raíces, lo cual forma un polígono regular de $d$ lados. Este polígono intersecta al círculo unitario solamente en sus vértices, que son las raíces d-ésimas de la unidad. Por lo tanto, si $\tau_{pq}$ se encuentra en el círculo unitario, tiene que ser una raíz d-ésima de la unidad.  $ \blacksquare$  \\
+Entonces, $\tau_{pq}$ es una suma convexa de varias raíces d-ésimas 
+de la unidad (convexa porque la suma de los coeficientes $\lambda_{mn}/d$ es igual a $1$). 
+Entonces, los posibles valores de $\tau_{pq}$ se encuentran 
+en la envoltura convexa de estas raíces,
+ lo cual forma un polígono regular de $d$ lados (y si además consideramos que $|\tau_{pq}|=1$, hay que considerar que cada $\tau$ se encuentra en el círculo unitario).
+Este polígono intersecta al círculo unitario solamente en sus vértices,
+ que son las raíces d-ésimas de la unidad.
+ Por lo tanto, si $\tau_{pq}$ se encuentra en el círculo unitario, 
+tiene que ser una raíz d-ésima de la unidad.  $ \blacksquare$  \\
 
-Por lo tanto, en los canales WCEG se puede considerar que los multiplicadores $\tau$ son siempre raíces de la unidad. \\
+Por lo tanto, en los canales MNU se puede considerar 
+que los multiplicadores $\tau$ son siempre raíces de la unidad. \\
 
 Con estos resultados podemos probar un lema que luego nos lleva a un teorema:\\
 
@@ -148,7 +157,7 @@ Entonces, si $\omega_d^{pn-qm-k} \neq 1$, se debe de tener que $\lambda_{mn} = 0
 \end{align*}
 Pero como las lambdas de la suma que quedan son las únicas distintas de $0$, la ecuación \ref{suma-lambdas} implica que esta suma es igual a $d$ y por lo tanto $\tau_{pq} = \omega_d^k$. $\blacksquare$ \\
 
-\textbf{Teorema 2:}  \textit{Si $\tau_{pq} = \omega_d^k$ y $\tau_{p'q'} = \omega_d^{k'}$ (es decir, tenemos que dos taus son raíces $d$-ésimas de la unidad), entonces se tiene que $\tau_{p \oplus p' , q \oplus q'} = \tau_{pq} \tau_{p'q'} = \omega_d^{k+k'}$.} \\
+\textbf{Teorema 2 (Propiedad algebráica):}  \textit{Si $\tau_{pq} = \omega_d^k$ y $\tau_{p'q'} = \omega_d^{k'}$ (es decir, tenemos que dos taus son raíces $d$-ésimas de la unidad), entonces se tiene que $\tau_{p \oplus p' , q \oplus q'} = \tau_{pq} \tau_{p'q'} = \omega_d^{k+k'}$.} \\
 
 \textbf{Demostración:} Vamos a usar el regreso del lema, para lo que empezamos probando su hip\'otesis. Digamos que $\omega_d^{(p \oplus p') n - (q \oplus q')m} \neq \omega_d^{k+k'}$, lo que implica que $\omega_d^{p n - qm} \omega_d^{p'n - q'm} \neq \omega_d^{k+k'}$. \\
 Para que se cumpla esto, se debe de tener que $ \omega_d^{p n - qm} \neq \omega_d^k$ o bien $\omega_d^{p'n-q'm} \neq \omega_d^{k'}$. \\
@@ -159,15 +168,26 @@ Entonces, hemos demostrado que $\omega_d^{(p \oplus p')n - (q\oplus q')m} \neq \
 
 En particular, eso muestra que el conjunto de taus que valen 1 es cerrado bajo $\oplus$ (pues si $\tau_{pq}= 1$ y $\tau_{p'q'}=1$, el teorema dice que $\tau_{p\oplus p', q\oplus q'} = \tau_{pq} \tau_{p'q'} = 1$).  \\
 
-Creo que con este teorema se puede probar los canales WCEG son justo los que se obtienen cuando las taus son las columnas de la matriz $a$ (generalizada al caso de $d$ niveles, donde se  puede definir como $a_{mnpq} = \omega_{d}^{np-mq}$ y después ``colapsarla'' a dos índices). Es decir, el siguiente teorema:\\
+Con este teorema se puede probar los canales MNU son justo los que se obtienen cuando las taus son las columnas de la matriz $a$ (generalizada al caso de $d$ niveles, donde se  puede definir como $a_{mnpq} = \omega_{d}^{np-mq}$ y después ``colapsarla'' a dos índices). Es decir, el siguiente teorema:\\
 
-\textbf{Teorema 3:} \textit{Sólo hay $d^2$ canales WCEG válidos. Cada uno consiste en una elección de taus de la forma $\tau_{pq} = \omega_d^{np-mq}$ (columnas de la matriz $a$) para alguna elección de $m,n$ de las $d^2$ posibles.}\\
+\textbf{Teorema 3:} \textit{Sólo hay $d^2$ canales MNU válidos. Cada uno consiste en una elección de taus de la forma $\tau_{pq} = \omega_d^{np-mq}$ (columnas de la matriz $a$) para alguna elección de $m,n$ de las $d^2$ posibles.}\\
 
-Para probarlo, vemos primero que solamente hay $d^2$ canales WCEG posibles. Para ver esto, notamos por el teorema 2 que si conocemos $\tau_{01}$ y $\tau_{10}$, todas las otras taus (y por tanto el canal completo) quedan determinadas. Esto debido a que cualquier $\tau_{pq}$ se va a poder calcular como productos de $\tau_{01}$ y $\tau_{10}$ usando la conclusión del teorema 2.  Como hay $d$ posibilidades para el valor de $\tau_{01}$ y de $\tau_{10}$, tenemos un total de a lo sumo  $d^2$ canales distintos. 
+Para probarlo, vemos primero que solamente hay $d^2$ canales MNU posibles. Para ver esto, notamos por el teorema 2 que si conocemos $\tau_{01}$ y $\tau_{10}$, todas las otras taus (y por tanto el canal completo) quedan determinadas. Esto debido a que cualquier $\tau_{pq}$ se va a poder calcular como productos de $\tau_{01}$ y $\tau_{10}$ usando la conclusión del teorema 2.  Como hay $d$ posibilidades para el valor de $\tau_{01}$ y de $\tau_{10}$, tenemos un total de a lo sumo  $d^2$ canales distintos. 
 
-Por otro lado, se puede demostrar que si elegimos $\tau_{pq} = \omega_d^{np-mq}$ para alguna elección de $m,n \in \{0,1, \cdots , d-1\}$, entonces estas taus definen un canal válido. Para probarlo solamente hay que usar la diagonalización y al calcular los eigenvalores se obtiene que todas las lambdas son $0$ excepto la $\lambda_{mn}$, que vale $d$, por lo que el canal es CP). Además, elecciones distintas de $n,m$ dan lugar a canales distintos, por lo que hemos encontrado $d^2$ canales distintos. 
+Por otro lado, se puede demostrar que si elegimos $\tau_{\mu\nu} = \omega_d^{m\nu-\mu n}$ para alguna elección de $m,n \in \{0,1, \cdots , d-1\}$ (es decir, alguna columna de $a$), entonces estas taus definen un canal válido. Para probarlo solamente hay que usar la diagonalización para esta elección de taus y ver que todas las lambdas son no negativas y reales:
+\begin{align*}
+\lambda_{kl} &= \dfrac{1}{d} \sum_{\mu \nu = 0}^{d-1} \tau_{\mu\nu} \omega_d^{k\nu-\mu l} \\
+& = \dfrac{1}{d} \sum_{\mu \nu = 0}^{d-1} \omega_d^{m\nu-\mu n} \omega_d^{k\nu-\mu l} \\
+& = \dfrac{1}{d} \sum_{\mu\nu = 0}^{d-1} \omega_d^{\nu (m+k)} \omega_d^{-\mu(\nu + l)}  \\
+& = \dfrac{1}{d} \sum_{\mu=0}^{d-1} \omega_d^{-\mu(n + l)} \sum_{\nu=0}^{d-1} \omega_d^{\nu(m+k)} \\
+&= \dfrac{1}{d} d \delta_{n,-l} d \delta_{m,-k} \;\;\; \text{Por propiedad que menciona alejo justo antes de la seccion 5}  \\
+& = d \delta_{n,-l} \delta_{m,-k}
+\end{align*}
+Entonces, todas las lambdas son positivas, en particular, todas menos una valen $0$ y la otra (la de índices $(-m,-l)$) vale $d$.\\
 
-Como vimos que hay a lo sumo $d^2$ canales WCEG distintos y ya encontramos $d^2$ canales, concluimos que los canales WCEG son exactamente esos. Es decir, los canales WCEG son exactamente aquéllos de la forma $\tau_{pq}  =\omega_d^{np-mq}$ para las distintas elecciones de $m,n$. $\blacksquare$ \\ \\
+Además, elecciones distintas de $m,n$ dan lugar a canales distintos, por lo que hemos encontrado $d^2$ canales distintos. 
+
+Como vimos que hay a lo sumo $d^2$ canales MNU distintos y ya encontramos $d^2$ canales, concluimos que los canales MNU son exactamente esos. Es decir, los canales MNU son exactamente aquéllos de la forma $\tau_{pq}  =\omega_d^{np-mq}$ para las distintas elecciones de $m,n$. $\blacksquare$ \\ \\
 
 A lo mejor hay una forma mejor de probar este resultado y sin necesidad del teorema 2. Y también puede ser que se pueda sacar una conclusión sobre una estructura interesante que tienen estos canales al usar el teorema 2. \\
 
@@ -189,5 +209,149 @@ Dejo aquí algunos dibujos de la matriz $a_{nmpq} = \omega_d^{np-mq}$ colapsada 
     \subfloat[\centering $d=17$]{{\includegraphics[width=5cm]{imagenes/d17.png} }}%
 \end{figure}
 % }}}
+\newpage
+
+\section{Las desigualdades}
+Partimos de la diagonalización para tener las lambdas en términos de las taus:
+\begin{align*}
+\lambda_{kl} = \dfrac{1}{d} \sum_{\mu\nu=0}^{d-1} \tau_{\mu\nu} \omega_d^{k\nu - \mu l},
+\end{align*}
+y calculamos la parte real y la parte imaginaria de $\lambda_{kl}$,
+considerando que las taus son complejas y se pueden separar en 
+parte real e imaginaria como: $\tau_{\mu\nu} = \tau_{\mu\nu}^R + i \tau_{\mu\nu}^I$. 
+La parte real de las lambdas la exigimos mayor o igual a $0$
+ y la imaginaria 0 (para que las lambdas sean reales no negativos 
+y el canal sea CP) y nos queda:
+\begin{align}
+Re(\lambda_{kl}) =  \sum_{\mu \nu} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right] \geq 0 \label{desigualdades} \\
+Im(\lambda_{kl}) = \sum_{\mu \nu} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I +\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R \right] = 0.  \label{igualdades}
+\end{align}
+La cantidad de variables reales es $2d^2$ 
+(o más bien $2d^2 - 2$ si consideramos que $\tau_{00} = 1$) y tenemos $d^2$ igualdades
+y $d^2$ desigualdades. Por tanto, se deberían de poder usar las $d^2$ 
+igualdades para reducir las $2d^2$
+variables a $d^2$ y que las desigualdades sólo apliquen sobre ellas.
+
+Para reducir las variables, primero definiremos dos conjuntos de vértices como siguen (se supone siempre la suma módulo $d$):
+
+\begin{align*}
+Inv &= \{(\mu,\nu)\; | ;\ (\mu , \nu) = (d-\mu, d-\nu)\},
+\end{align*}
+es decir, $Inv$ son los índices $(\mu,\nu)$ que son sus propios inversos bajo la suma módulo $d$. 
+Luego, todos los índices restantes (los que no están en $Ainv$) se pueden arreglar en parejas de cada elemento y su inverso. Es decir, cada vértices  de los restantes como $(\mu,\nu)$ tiene emparejado su inverso $(d-\mu,d-\nu)$ (que es distinto a $(\mu,\nu)$). 
+
+Entonces, definimos un conjunto $B$ como un conjunto de  índices que toma un solo índice de cada una de estas parejas de elemento e inverso. Definimos $B^{-1}$ como el los inversos de los elementos de $B$. \\
+
+\textbf{Ejemplo:}
+\begin{itemize}
+\item $d=3$: Para qutrits, todos los índices son $\{(0,0), (0,1), (0,2), (1,0) ,(1,1), (1,2), (2,0), (2,1), (2,2) \}$. Entonces, $Inv = \{(0,0)\}$. El resto de los elementos se dividen en $4$ parejas de elemento - inverso de la forma $\{(0,1), (0,2)\} \; ,\; \{(1,0), (2,0)\} \; ,\; \{(1,1), (2,2)\} \; ,\; \{(1,2) , (2,1)\}$. Para elegir $B$, seleccionamos uno de los elementos de cada pareja (arbitrariamente), como por ejemplo: $B = \{(0,1), (1,0), (1,1) ,(1,2)\}$ y entonces $B^{-1} = \{(0,2), (2,0), (2,2), (2,1)\}$.\\
+
+\item $d=4$: Para qutrits, todos los índices son $\{(0,0), (0,1), (0,2),(0,3), (1,0) ,(1,1), (1,2),(1,3)$, $(2,0), (2,1), (2,2),(2,3) , (3,0), (3,1),(3,2), (3,3) \}$. Entonces, $Inv = \{(0,0), (0,2), (2,0), (2,2)\}$. El resto de los elementos se dividen en $6$ parejas de elemento - inverso de la forma \\
+$\{(0,1), (0,3)\} \; ,\; \{(1,0), (3,0)\} \; ,\; \{(1,1), (3,3)\} \; ,\; \{(1,2) , (3,2)\} \;$ ,$\; \{(1,3) , (3,1)\} \; ,\; \{(2,1), (2,3)\}$. \\
+Para elegir $B$, seleccionamos uno de los elementos de cada pareja (arbitrariamente), como por ejemplo: $B = \{(0,1), (1,0), (1,1) ,(1,2), (1,3), (2,1)\}$ y entonces \\
+$B^{-1} = \{(0,3) ,(3,0),(3,3),(3,2),(3,1),(2,3)\}$. \\
+\item Notar que en general si $d$ es par, entonces $Inv = \{ (0,0) , (0,d/2), (d/2,0), (d/2,d/2)\}$ y $B$ tiene la mitad de los $d^2-4$ elementos restantes. Si $d$ es impar, entonces $Inv = \{(0,0)\}$ y $B$ tiene la mitad de los $d^2 - 1$ elementos restantes. 
+\end{itemize}
+\textbf{Teorema 4:} \textit{Las $d^2$ igualdades \ref{igualdades} son equivalentes a las $d^2$ igualdades siguientes:}
+\begin{align}
+\tau_{\mu \nu}^R = \tau_{d-\mu, d-\nu}^R \;\;\;\; ,\;\; \text{para $(\mu,\nu) \in B$}
+\label{ecs Re} \\
+\tau_{\mu \nu}^I = - \tau^I_{d-\mu, d-\nu} \;\;\;\;,\;\; \text{para $(\mu , \nu) \in B \cup Inv $}
+\label{ecs Im}
+\end{align}
+\textit{(notar que son efectivamente $d^2$ igualdades)}. \\
+
+\textbf{Dem:} Partiremos de las igualdades \ref{ecs Re} , \ref{ecs Im} y llegaremos a las igualdades \ref{igualdades}.
+Empezamos multiplicando las ecuaciones \ref{ecs Re} por $\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right)$ 
+y las \ref{ecs Im} por $\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right)$.
+Entonces nos queda:
+\begin{align*}
+\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R = \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^R \;\;\; ,\; (\mu,\nu) \in B \\
+\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I = -\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^R \;\;\; ,\; (\mu,\nu) \in B \cup Inv 
+\end{align*}
+Despejamos cada una de estas ecuaciones y las sumamos sobre $B$:
+\begin{align*}
+\sum_{(\mu,\nu) \in B} \left[  \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R - \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^R\right] = 0 \\
+\sum_{(\mu,\nu) \in B}\left[ \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^I \right] = 0
+\end{align*}
+Luego, utilizamos que $\sin \left( \dfrac{2\pi}{d}(k(d-\nu) - l(d-\mu)) \right) = -\sin \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right)$ (usando que $\sin(x + 2\pi n) = \sin(x)$ y que $\sin (-x) = -\sin(x)$). \\
+También usamos que $\cos \left( \dfrac{2\pi}{d}(k(d-\nu) - l(d-\mu)) \right) = \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right)$ y nos quedan:
+\begin{align*}
+\sum_{(\mu,\nu) \in B}\left[  \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R + \sin\left( \dfrac{2\pi}{d}(k(d-\nu) - l (d-\mu))\right) \tau_{d-\mu, d-\nu}^R \right] = 0 \\
+\sum_{(\mu,\nu) \in B} \left[ \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \cos\left( \dfrac{2\pi}{d}(k(d-\nu) - l (d-\mu))\right) \tau_{d-\mu, d-\nu}^I\right]  = 0
+\end{align*}
+Pero se tiene que $\sum_{(\mu,\nu) \in B} \sin\left( \dfrac{2\pi}{d}(k(d-\nu) - l (d-\mu))\right) \tau_{d-\mu, d-\nu}^R = \sum_{(\mu,\nu)\in B^{-1}} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R$ y similarmente para coseno, por lo que nos queda:
+\begin{align*}
+\sum_{(\mu,\nu) \in B}  \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R + \sum_{(\mu,\nu) \in B^{-1}} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R  = 0 \\
+\sum_{(\mu,\nu) \in B} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \sum_{(\mu,\nu) \in B^{-1}} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I  = 0
+\end{align*}
+Finalmente, notamos que si $(\mu,\nu) \in Inv$, entonces $\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu) \right) = 0$,
+lo que implica trivialmente que $\sum_{(\mu,\nu) \in Inv} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu) \right)  \tau_{\mu \nu}^R = 0$.
+Además, por \ref{ecs Im}, se cumple que si $(\mu,\nu) \in Inv$, 
+entonces $\tau_{\mu\nu}^I = -\tau_{d-\mu,d-\nu}^I$ 
+y entonces $\tau_{\mu\nu}^I = 0$, lo que implica trivialmente 
+que $\sum_{(\mu,\nu) \in Inv} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I  = 0$. 
+Podemos agregar estos dos resultados a las ecuaciones que teníamos:
+\begin{align*}
+\sum_{(\mu,\nu) \in B}  \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R + \sum_{(\mu,\nu) \in B^{-1}} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R  + \sum_{(\mu,\nu) \in Inv} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu) \right)  \tau_{\mu \nu}^R  = 0 \\
+\sum_{(\mu,\nu) \in B} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \sum_{(\mu,\nu) \in B^{-1}} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I  + \sum_{(\mu,\nu) \in Inv} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu) \right) \tau_{\mu \nu}^I = 0
+\end{align*} 
+Pero en cada una de estas ecuaciones estamos ya sumando sobre todos los índices, que son $Inv \cup B \cup B^{-1}$ 
+y entonces:
+\begin{align*}
+\sum_{\mu,\nu}\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R  = 0 \\
+\sum_{\mu,\nu} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I =0  
+\end{align*}
+Y sumando ambas nos queda:
+\begin{align*}
+\sum_{\mu\nu} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R+ \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I = 0,
+\end{align*}
+que son las igualdades \ref{igualdades}. Con ello probamos que es posible pasar de \ref{ecs Im}, \ref{ecs Re} a las igualdades \ref{igualdades} con sólo multiplicar las ecs \ref{ecs Im},\ref{ecs Re} por constantes y sumando. Esto prueba que los dos sistemas de ecuaciones son equivalentes. $\blacksquare$ \\ \\ \\
+
+Luego, sabiendo que las igualdades que teníamos en \ref{igualdades} son equivalentes a \ref{ecs Im}, \ref{ecs Re}, podemos usar éstas últimas para simplificar las variables.
+
+Notamos primero que \ref{ecs Im} implica que si $(\mu,\nu) \in Inv$, entonces $\tau_{\mu\nu}^I = - \tau_{d-\mu, d-\nu}^I = -\tau_{\mu,\nu}^I$ y entonces $\tau_{\mu,\nu}^I = 0$. Es decir, los elementos $\tau_{\mu,\nu}$ para $(\mu,\nu) \in Inv$ son reales puros. 
+Además, vemos de \ref{ecs Im}, \ref{ecs Re} que si conocemos $\tau_{\mu\nu}^R , \tau_{\mu \nu}^I$ para $(\mu,\nu)\in B$, entonces podemos conseguir $\tau_{(d-\mu,d-\nu)}^R , \tau_{(d-\mu,d-\nu)}^I$. Esto implica que las únicas variables libres son $\tau_{\mu\nu}^R$ para $(\mu,\nu) \in Inv$ y $\tau_{\mu\nu}^R, \tau_{\mu\nu}^I$ para $(\mu,\nu) \in B$. \\
+
+Luego, usando las igualdades \ref{ecs Im}, \ref{ecs Re}, se pueden reescribir las desigualdades \ref{desigualdades} pero para que ahora solamente dependan de las variables libres y queda como:
+\begin{align*}
+\boxed{\sum_{(\mu,\nu)\in B} 2 \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right) \tau_{\mu\nu}^R + \sum_{(\mu,\nu)\in Inv} \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \tau_{\mu\nu}^R + \sum_{(\mu,\nu)\in B} 2 \sin \left( \dfrac{2\pi}{d}(k\nu - l\mu) \tau_{\mu\nu}^I \geq 0}
+\end{align*}
+
+\section*{Politopo}
 
 
+\begin{itemize}
+\item Al final de la sección anterior nos quedaron $d^2$ desigualdades para $d^2-1$ variables libres (son $d^2-1$ variables libres si consideramos que $\tau_{00} = 1$, ya que entonces $\tau_{00}^R = 1$ y no es libre). 
+\item Estas desigualdades definen un politopo formado por la intersección de $d^2$ hiperplanos en un espacio de $d^2-1$ dimensiones. 
+\item Usando las desigualdades, se pueden encontrar los vértices de este politopo para las variables libres. Luego, se pueden usar las igualdades \ref{ecs Im}, \ref{ecs Re} para recuperar también las variables dependientes y conseguir así los canales todas las taus complejas que definen al canal del vértice. \\
+
+Eso justo hicimos para $d=3,4$ computacionalmente y encontramos que los vértices son las columnas de la matriz $a$. \\
+
+\item\textbf{Teorema:} \textit{Eso nos lleva a demostrar que en general los vértices del politopo de canales de weyl para qudits son justo las columnas de $a$}: \\
+
+\textbf{Dem:} Empezamos demostrando lo siguiente:
+
+\item \textbf{Las taus de un canal de Weyl  no pueden tener magnitud mayor a $1$:} Partimos de \ref{tau en termino de lambda}, que dice que:
+\begin{align*}
+\tau_{pq} = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm}.
+\end{align*}
+Entonces $\tau_{pq}$ es una suma convexa de varias raíces d-ésimas de la unidad
+(convexa porque la suma de $\lambda_{mn}/d $ es $1$). 
+Por lo tanto, los posibles valores de $\tau$ se encuentran en la envoltura convexa
+ de estas raíces. Dicha envoltura convexa tiene como vértices a las raíces de la unidad 
+ (o a lo mejor sólo algunas de las raíces de la unidad).
+ Luego, $\tau_{pq}$ no puede tener norma mayor que $1$, pues saldría de esta envoltura convexa.  \\
+ 
+Esto prueba que el politopo de canales de Weyl no puede incluir taus con norma mayor que $1$, pues ya no son canales.
+ 
+\item \textbf{Los canales MNU (que son columnas de la $a$) son vértices del politpo:} 
+Como las taus no pueden tener magnitud mayor a $1$, 
+los canales en las que todas las taus tienen magnitud igual a $1$ 
+(canales MNU) están en la frontera del politopo
+(pues, si aumentamos tantito alguna de las taus, 
+se salen del politopo de canales válidos por tener una tau de magnitud mayor que $1$). \\
+ 
+\item \textbf{Los vértices del politopo son los canales MNU (y por tanto son las columnas de la $a$):} 
+Para el politopo tenemos un total de $d^2$ desigualdades que lo definen y con $d^2 - 1$ variables libres. Entonces, a lo mucho habrá $d^2$ vértices. Como ya encontramos $d^2$ vértices en el inciso anterior, concluimos que estos tienen que ser todos los vértices del politopo.
+\end{itemize}
