@@ -91,9 +91,6 @@ como $\tau_{00}=1$, concluimos que:
 % }}}
 \section{Canales con $|\tau_{\mu\nu}|=1$ y propiedades algebráicas} % {{{
 
-Vamos a definir canales parecidos a WCE pero generalizados para permitir
-valores de $\tau$ distintos. 
-
 \textbf{Definición, Canales con Multiplicadores de Norma Unitaria (Canales MNU):} Definimos un canal MNU
 (o cambiar el nombre por uno mejor) como un canal de Weyl en el cual los
 multiplicadores $\tau_{mn}$ cumplen que $|\tau_{mn}|= 1$.  Es decir, los
@@ -105,9 +102,7 @@ ahora que $\tau_{mn} = 0$, pero a lo mejor se puede agregar luego.
 
 
 
-\subsection{Propiedades de MNU}
-
-
+\subsection{Propiedades de Canales MNU}
 
 \textbf{Teorema 1:} \textit{En un canal de Weyl, si $|\tau_{pq}| = 1$, entonces $\tau_{pq} = \omega_d^{k}$ para algún entero $k$. Por lo tanto, los únicos multiplicadores que hay que tomar en cuenta en canales MNU son los que sean raíces $d$-ésimas de la unidad.} \\
 
@@ -116,13 +111,14 @@ ahora que $\tau_{mn} = 0$, pero a lo mejor se puede agregar luego.
 & \tau_{pq} = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm} .
 \end{align*}
 Entonces, $\tau_{pq}$ es una suma convexa de varias raíces d-ésimas 
-de la unidad (convexa porque la suma de los coeficientes $\lambda_{mn}/d$ es igual a $1$). 
-Entonces, los posibles valores de $\tau_{pq}$ se encuentran 
-en la envoltura convexa de estas raíces,
- lo cual forma un polígono regular de $d$ lados (y si además consideramos que $|\tau_{pq}|=1$, hay que considerar que cada $\tau$ se encuentra en el círculo unitario).
-Este polígono intersecta al círculo unitario solamente en sus vértices,
- que son las raíces d-ésimas de la unidad.
- Por lo tanto, si $\tau_{pq}$ se encuentra en el círculo unitario, 
+de la unidad (convexa porque la suma de los coeficientes $\lambda_{mn}/d$ es igual a $1$ y estos coeficientes son $\geq 0$ para ser un canal CP). 
+Por lo tanto, los posibles valores de $\tau_{pq}$ se encuentran 
+en la envoltura convexa de estas raíces $\omega_d^{pn-qm}$,
+lo cual forma un polígono con vértices en las raíces. 
+Pero además, $\tau_{pq}$ se encuentra en el círculo unitario, debido a que $|\tau_{pq}| = 1$. 
+Por lo tanto, los posibles  valores de $\tau_{pq}$ tienen que ser la intersección
+del círculo unitario con el polígono, que son justamente los vértices en las raíces. \\
+Por lo tanto, si $\tau_{pq}$ se encuentra en el círculo unitario, 
 tiene que ser una raíz d-ésima de la unidad.  $ \blacksquare$  \\
 
 Por lo tanto, en los canales MNU se puede considerar 
@@ -189,8 +185,6 @@ Además, elecciones distintas de $m,n$ dan lugar a canales distintos, por lo que
 
 Como vimos que hay a lo sumo $d^2$ canales MNU distintos y ya encontramos $d^2$ canales, concluimos que los canales MNU son exactamente esos. Es decir, los canales MNU son exactamente aquéllos de la forma $\tau_{pq}  =\omega_d^{np-mq}$ para las distintas elecciones de $m,n$. $\blacksquare$ \\ \\
 
-A lo mejor hay una forma mejor de probar este resultado y sin necesidad del teorema 2. Y también puede ser que se pueda sacar una conclusión sobre una estructura interesante que tienen estos canales al usar el teorema 2. \\
-
 Dejo aquí algunos dibujos de la matriz $a_{nmpq} = \omega_d^{np-mq}$ colapsada a dos dimensiones (en la horizontal el índice es $dm+n$ y en la vertical $dp+q$) para distintos valores de $d$. Cada entrada la pongo en un color desde el blanco para la raíz $\omega_d^0 = 1$ hasta negro para la última raíz $\omega_d^{d-1}$. Como se dijo antes, las columnas de esta matriz son los $d^2$ canales válidos, cada uno es $\tau_{pq} = \omega_d^{np-mq}$. 
 
 
@@ -212,11 +206,16 @@ Dejo aquí algunos dibujos de la matriz $a_{nmpq} = \omega_d^{np-mq}$ colapsada 
 \newpage
 
 \section{Las desigualdades}
+
+Regresamos ahora a los canales de Weyl en general para obtener 
+condiciones que deben de cumplir las taus para que
+el canal sea CP. 
+
 Partimos de la diagonalización para tener las lambdas en términos de las taus:
 \begin{align*}
-\lambda_{kl} = \dfrac{1}{d} \sum_{\mu\nu=0}^{d-1} \tau_{\mu\nu} \omega_d^{k\nu - \mu l},
+\lambda_{kl} = \dfrac{1}{d} \sum_{\mu\nu=0}^{d-1} \tau_{\mu\nu} \omega_d^{k\nu - \mu l}.
 \end{align*}
-y calculamos la parte real y la parte imaginaria de $\lambda_{kl}$,
+Calculamos la parte real y la parte imaginaria de $\lambda_{kl}$,
 considerando que las taus son complejas y se pueden separar en 
 parte real e imaginaria como: $\tau_{\mu\nu} = \tau_{\mu\nu}^R + i \tau_{\mu\nu}^I$. 
 La parte real de las lambdas la exigimos mayor o igual a $0$
@@ -227,31 +226,36 @@ Re(\lambda_{kl}) =  \sum_{\mu \nu} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu)
 Im(\lambda_{kl}) = \sum_{\mu \nu} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I +\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R \right] = 0.  \label{igualdades}
 \end{align}
 La cantidad de variables reales es $2d^2$ 
-(o más bien $2d^2 - 2$ si consideramos que $\tau_{00} = 1$) y tenemos $d^2$ igualdades
+(o más bien $2d^2 - 2$ si consideramos que $\tau_{00} = 1$ para que sea trace
+preserving) y tenemos $d^2$ igualdades
 y $d^2$ desigualdades. Por tanto, se deberían de poder usar las $d^2$ 
 igualdades para reducir las $2d^2$
 variables a $d^2$ y que las desigualdades sólo apliquen sobre ellas.
 
-Para reducir las variables, primero definiremos dos conjuntos de vértices como siguen (se supone siempre la suma módulo $d$):
+El problema es que las igualdades son un poco difíciles de tratar y
+para reducirlas necesitaremos separar a los índices $(\mu, \nu)$ en tres conjuntos. 
+Empezamos definiendo un conjunto como sigue:
 
 \begin{align*}
-Inv &= \{(\mu,\nu)\; | ;\ (\mu , \nu) = (d-\mu, d-\nu)\},
+Inv &= \{(\mu,\nu)\; | \; (\mu , \nu) = (d-\mu, d-\nu)\},
 \end{align*}
 es decir, $Inv$ son los índices $(\mu,\nu)$ que son sus propios inversos bajo la suma módulo $d$. 
-Luego, todos los índices restantes (los que no están en $Ainv$) se pueden arreglar en parejas de cada elemento y su inverso. Es decir, cada vértices  de los restantes como $(\mu,\nu)$ tiene emparejado su inverso $(d-\mu,d-\nu)$ (que es distinto a $(\mu,\nu)$). 
 
-Entonces, definimos un conjunto $B$ como un conjunto de  índices que toma un solo índice de cada una de estas parejas de elemento e inverso. Definimos $B^{-1}$ como el los inversos de los elementos de $B$. \\
+Luego, todos los índices restantes (los que no están en $Inv$) se pueden arreglar en parejas de índice e inverso. Es decir, cada vértices  de los restantes como $(\mu,\nu)$ tiene emparejado su inverso $(d-\mu,d-\nu)$ (que es distinto a $(\mu,\nu)$). 
+
+Entonces, definimos a $B$ como un conjunto de  índices que toma un solo índice de cada una de estas parejas de elemento-inverso. Definimos $B^{-1}$ como el conjunto de los inversos de los índices de $B$. \\
 
 \textbf{Ejemplo:}
 \begin{itemize}
-\item $d=3$: Para qutrits, todos los índices son $\{(0,0), (0,1), (0,2), (1,0) ,(1,1), (1,2), (2,0), (2,1), (2,2) \}$. Entonces, $Inv = \{(0,0)\}$. El resto de los elementos se dividen en $4$ parejas de elemento - inverso de la forma $\{(0,1), (0,2)\} \; ,\; \{(1,0), (2,0)\} \; ,\; \{(1,1), (2,2)\} \; ,\; \{(1,2) , (2,1)\}$. Para elegir $B$, seleccionamos uno de los elementos de cada pareja (arbitrariamente), como por ejemplo: $B = \{(0,1), (1,0), (1,1) ,(1,2)\}$ y entonces $B^{-1} = \{(0,2), (2,0), (2,2), (2,1)\}$.\\
+\item $d=3$: Para qutrits, todos los índices son $\{(0,0), (0,1), (0,2), (1,0) ,(1,1), (1,2), (2,0), (2,1), (2,2) \}$. Entonces, $Inv = \{(0,0)\}$. El resto de los elementos se dividen en $4$ parejas de elemento - inverso de la forma: $\{(0,1), (0,2)\} \; ,\; \{(1,0), (2,0)\} \; ,\; \{(1,1), (2,2)\} \; ,\; \{(1,2) , (2,1)\}$. Para elegir $B$, seleccionamos uno de los elementos de cada pareja (arbitrariamente, no se me ocurre una forma natural de elegirlos), como por ejemplo: $B = \{(0,1), (1,0), (1,1) ,(1,2)\}$ y entonces $B^{-1} = \{(0,2), (2,0), (2,2), (2,1)\}$.\\
 
-\item $d=4$: Para qutrits, todos los índices son $\{(0,0), (0,1), (0,2),(0,3), (1,0) ,(1,1), (1,2),(1,3)$, $(2,0), (2,1), (2,2),(2,3) , (3,0), (3,1),(3,2), (3,3) \}$. Entonces, $Inv = \{(0,0), (0,2), (2,0), (2,2)\}$. El resto de los elementos se dividen en $6$ parejas de elemento - inverso de la forma \\
+\item $d=4$: En este caso, todos los índices son $\{(0,0), (0,1), (0,2),(0,3), (1,0) ,(1,1), (1,2),(1,3)$, $(2,0), (2,1), (2,2),(2,3) , (3,0), (3,1),(3,2), (3,3) \}$. Entonces, $Inv = \{(0,0), (0,2), (2,0), (2,2)\}$. El resto de los elementos se dividen en $6$ parejas de elemento - inverso de la forma: \\
 $\{(0,1), (0,3)\} \; ,\; \{(1,0), (3,0)\} \; ,\; \{(1,1), (3,3)\} \; ,\; \{(1,2) , (3,2)\} \;$ ,$\; \{(1,3) , (3,1)\} \; ,\; \{(2,1), (2,3)\}$. \\
 Para elegir $B$, seleccionamos uno de los elementos de cada pareja (arbitrariamente), como por ejemplo: $B = \{(0,1), (1,0), (1,1) ,(1,2), (1,3), (2,1)\}$ y entonces \\
 $B^{-1} = \{(0,3) ,(3,0),(3,3),(3,2),(3,1),(2,3)\}$. \\
 \item Notar que en general si $d$ es par, entonces $Inv = \{ (0,0) , (0,d/2), (d/2,0), (d/2,d/2)\}$ y $B$ tiene la mitad de los $d^2-4$ elementos restantes. Si $d$ es impar, entonces $Inv = \{(0,0)\}$ y $B$ tiene la mitad de los $d^2 - 1$ elementos restantes. 
 \end{itemize}
+Con ello, ahora sí podemos reducir para simplificarlas las igualdades según el siguiente teorema.
 \textbf{Teorema 4:} \textit{Las $d^2$ igualdades \ref{igualdades} son equivalentes a las $d^2$ igualdades siguientes:}
 \begin{align}
 \tau_{\mu \nu}^R = \tau_{d-\mu, d-\nu}^R \;\;\;\; ,\;\; \text{para $(\mu,\nu) \in B$}
@@ -261,26 +265,28 @@ $B^{-1} = \{(0,3) ,(3,0),(3,3),(3,2),(3,1),(2,3)\}$. \\
 \end{align}
 \textit{(notar que son efectivamente $d^2$ igualdades)}. \\
 
-\textbf{Dem:} Partiremos de las igualdades \ref{ecs Re} , \ref{ecs Im} y llegaremos a las igualdades \ref{igualdades}.
+\textbf{Dem:} Partiremos de las igualdades \ref{ecs Re} , \ref{ecs Im} y las
+combinaremos para llegar a las igualdades \ref{igualdades}.
 Empezamos multiplicando las ecuaciones \ref{ecs Re} por $\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right)$ 
 y las \ref{ecs Im} por $\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right)$.
 Entonces nos queda:
 \begin{align*}
-\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R = \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^R \;\;\; ,\; (\mu,\nu) \in B \\
-\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I = -\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^R \;\;\; ,\; (\mu,\nu) \in B \cup Inv 
+\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R = \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^R 
+\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I = -\cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^I
 \end{align*}
 Despejamos cada una de estas ecuaciones y las sumamos sobre $B$:
 \begin{align*}
 \sum_{(\mu,\nu) \in B} \left[  \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R - \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^R\right] = 0 \\
 \sum_{(\mu,\nu) \in B}\left[ \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{d-\mu, d-\nu}^I \right] = 0
 \end{align*}
-Luego, utilizamos que $\sin \left( \dfrac{2\pi}{d}(k(d-\nu) - l(d-\mu)) \right) = -\sin \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right)$ (usando que $\sin(x + 2\pi n) = \sin(x)$ y que $\sin (-x) = -\sin(x)$). \\
+Luego, utilizamos que $\sin \left[ \dfrac{2\pi}{d}(k(d-\nu) - l(d-\mu)) \right] = -\sin \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right)$ (usando que $\sin(x + 2\pi n) = \sin(x)$ y que $\sin (-x) = -\sin(x)$). \\
 También usamos que $\cos \left( \dfrac{2\pi}{d}(k(d-\nu) - l(d-\mu)) \right) = \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right)$ y nos quedan:
 \begin{align*}
 \sum_{(\mu,\nu) \in B}\left[  \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R + \sin\left( \dfrac{2\pi}{d}(k(d-\nu) - l (d-\mu))\right) \tau_{d-\mu, d-\nu}^R \right] = 0 \\
 \sum_{(\mu,\nu) \in B} \left[ \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \cos\left( \dfrac{2\pi}{d}(k(d-\nu) - l (d-\mu))\right) \tau_{d-\mu, d-\nu}^I\right]  = 0
 \end{align*}
-Pero se tiene que $\sum_{(\mu,\nu) \in B} \sin\left( \dfrac{2\pi}{d}(k(d-\nu) - l (d-\mu))\right) \tau_{d-\mu, d-\nu}^R = \sum_{(\mu,\nu)\in B^{-1}} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R$ y similarmente para coseno, por lo que nos queda:
+Pero por la definición de $B^{-1}$, se tiene también que \\
+$\sum_{(\mu,\nu) \in B} \sin\left( \dfrac{2\pi}{d}(k(d-\nu) - l (d-\mu))\right) \tau_{d-\mu, d-\nu}^R = \sum_{(\mu,\nu)\in B^{-1}} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R$ y similarmente para el término con coseno, por lo que nos queda:
 \begin{align*}
 \sum_{(\mu,\nu) \in B}  \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R + \sum_{(\mu,\nu) \in B^{-1}} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R  = 0 \\
 \sum_{(\mu,\nu) \in B} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \sum_{(\mu,\nu) \in B^{-1}} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I  = 0
@@ -297,7 +303,7 @@ Podemos agregar estos dos resultados a las ecuaciones que teníamos:
 \sum_{(\mu,\nu) \in B} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I + \sum_{(\mu,\nu) \in B^{-1}} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I  + \sum_{(\mu,\nu) \in Inv} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu) \right) \tau_{\mu \nu}^I = 0
 \end{align*} 
 Pero en cada una de estas ecuaciones estamos ya sumando sobre todos los índices, que son $Inv \cup B \cup B^{-1}$ 
-y entonces:
+y entonces se puede escribir como:
 \begin{align*}
 \sum_{\mu,\nu}\sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R  = 0 \\
 \sum_{\mu,\nu} \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I =0  
@@ -306,32 +312,79 @@ Y sumando ambas nos queda:
 \begin{align*}
 \sum_{\mu\nu} \sin\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^R+ \cos\left( \dfrac{2\pi}{d}(k\nu - l \mu)\right) \tau_{\mu\nu}^I = 0,
 \end{align*}
-que son las igualdades \ref{igualdades}. Con ello probamos que es posible pasar de \ref{ecs Im}, \ref{ecs Re} a las igualdades \ref{igualdades} con sólo multiplicar las ecs \ref{ecs Im},\ref{ecs Re} por constantes y sumando. Esto prueba que los dos sistemas de ecuaciones son equivalentes. $\blacksquare$ \\ \\ \\
+que son las igualdades \ref{igualdades}. Con ello probamos que es posible pasar de \ref{ecs Im} y \ref{ecs Re} a las igualdades \ref{igualdades} con sólo multiplicar las ecs \ref{ecs Im},\ref{ecs Re} por constantes y sumando. Es decir, los dos sistemas de ecuaciones son equivalentes. $\blacksquare$ \\ \\ \\
 
-Luego, sabiendo que las igualdades que teníamos en \ref{igualdades} son equivalentes a \ref{ecs Im}, \ref{ecs Re}, podemos usar éstas últimas para simplificar las variables.
+Luego, sabiendo que las igualdades que teníamos en \ref{igualdades} son equivalentes a \ref{ecs Im}, \ref{ecs Re}, 
+podemos usar éstas últimas para simplificar las variables.
+Recordemos que teníamos $d^2$ variables, pero buscamos usar las igualdades para reducir esta cantidad
+y quedarnos solamente con variables libres que luego podamos meter a las desigualdades
+y resolver las desigualdades para solamente estas variables libres. \\
 
 Notamos primero que \ref{ecs Im} implica que si $(\mu,\nu) \in Inv$, entonces $\tau_{\mu\nu}^I = - \tau_{d-\mu, d-\nu}^I = -\tau_{\mu,\nu}^I$ y entonces $\tau_{\mu,\nu}^I = 0$. Es decir, los elementos $\tau_{\mu,\nu}$ para $(\mu,\nu) \in Inv$ son reales puros. 
-Además, vemos de \ref{ecs Im}, \ref{ecs Re} que si conocemos $\tau_{\mu\nu}^R , \tau_{\mu \nu}^I$ para $(\mu,\nu)\in B$, entonces podemos conseguir $\tau_{(d-\mu,d-\nu)}^R , \tau_{(d-\mu,d-\nu)}^I$. Esto implica que las únicas variables libres son $\tau_{\mu\nu}^R$ para $(\mu,\nu) \in Inv$ y $\tau_{\mu\nu}^R, \tau_{\mu\nu}^I$ para $(\mu,\nu) \in B$. \\
+Además, vemos de \ref{ecs Im}, \ref{ecs Re} que si conocemos $\tau_{\mu\nu}^R , \tau_{\mu \nu}^I$ para $(\mu,\nu)\in B$, entonces podemos conseguir $\tau_{(d-\mu,d-\nu)}^R , \tau_{(d-\mu,d-\nu)}^I$. \\ 
 
-Luego, usando las igualdades \ref{ecs Im}, \ref{ecs Re}, se pueden reescribir las desigualdades \ref{desigualdades} pero para que ahora solamente dependan de las variables libres y queda como:
+Esto implica que las únicas variables libres son $\tau_{\mu\nu}^R$ para $(\mu,\nu) \in Inv$ y $\tau_{\mu\nu}^R, \tau_{\mu\nu}^I$ para $(\mu,\nu) \in B$. 
+Éstas son las $d^2$ variables libres que se pueden meter a las desigualdades
+para encontrar las condiciones que deben de cumplir.
+Una vez encontradas estas condiciones, se 
+pueden recuperar todas las variables
+usando las igualdades \ref{ecs Im}, \ref{ecs Re}.
+
+Ya habiendo encontrado las variables
+libres que usaremos, 
+se pueden reescribir las desigualdades para que sólo dependan de estas variables libres.
+Para hacerlo, simplemente partimos de las desigualdades \ref{desigualdades} y 
+hacemos unas manipulaciones como sigue:
+\begin{small}
 \begin{align*}
-\boxed{\sum_{(\mu,\nu)\in B} 2 \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right) \tau_{\mu\nu}^R + \sum_{(\mu,\nu)\in Inv} \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \tau_{\mu\nu}^R + \sum_{(\mu,\nu)\in B} 2 \sin \left( \dfrac{2\pi}{d}(k\nu - l\mu) \tau_{\mu\nu}^I \geq 0}
+&\sum_{\mu \nu} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right] \geq 0 \\
+&\Rightarrow \; \sum_{\mu \nu \in B} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right]  + \sum_{\mu \nu \in Inv} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right] + \\
+& \;\;\;\;\; + \sum_{\mu \nu \in B^{-1}} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right] \geq 0
 \end{align*}
+Usamos que $\tau_{\mu\nu}^I = 0$ para $(\mu,\nu)\in I$ para eliminar esos términos
+y cambiamos la última suma para que sea sobre $B$ al reemplazar $\mu,\nu$ por
+$d-\mu, d-\nu$:
+\begin{align*}
+&\Rightarrow \; \sum_{\mu \nu \in B} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right]  + \sum_{\mu \nu \in Inv}  \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R + \\
+& \;\;\;\;\; + \sum_{\mu \nu \in B} \left[ \cos \left( \dfrac{2\pi}{d}(k(d-\nu)-l(d-\mu)) \right) \tau_{d-\mu ,d-\nu}^R -\sin \left( \dfrac{2\pi}{d}(k(d-\nu)-l(d-\mu)) \right) \tau_{d-\mu,d-\nu}^I \right] \geq 0 \\
+& \text{Usamos propiedades del seno y coseno para simplificar los últimos términos} \\
+& \Rightarrow \; \sum_{\mu \nu \in B} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right]  + \sum_{\mu \nu \in Inv}  \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R + \\
+& \;\;\;\;\; + \sum_{\mu \nu \in B} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{d-\mu ,d-\nu}^R +\sin \left( \dfrac{2\pi}{d}(\nu-l\mu) \right) \tau_{d-\mu,d-\nu}^I \right] \geq 0 
+\end{align*}
+Finalmente, usamos las igualdades \ref{ecs Re}, \ref{ecs Im} para sustituir $\tau_{d-\mu, d-\nu}^R$ por $\tau_{\nu,\nu}^R$ y $\tau_{d-\mu,d-\nu}^I$ por $-\tau_{d-\mu,d-\nu}^I$:
+\begin{align*}
+& \Rightarrow \; \sum_{\mu \nu \in B} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R -\sin \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^I \right]  + \sum_{\mu \nu \in Inv}  \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu \nu}^R + \\
+& \;\;\;\;\; + \sum_{\mu \nu \in B} \left[ \cos \left( \dfrac{2\pi}{d}(k\nu-l\mu) \right) \tau_{\mu ,\nu}^R - \sin \left( \dfrac{2\pi}{d}(\nu-l\mu) \right) \tau_{\mu,\nu}^I \right] \geq 0 
+\end{align*} 
+\end{small}
+Con ello, finalmente obtuvimos las desigualdades solamente en términos
+de las $d^2$ variables libres ($\tau^R_{\mu\nu} , \tau^I_{\mu\nu}$ para $(\mu,\nu) \in B$ y 
+$\tau^R_{\mu\nu}$ para $(\mu,\nu) \in I$) y quedan como:
+\begin{align*}
+\boxed{\sum_{(\mu,\nu)\in B} 2 \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right) \tau_{\mu\nu}^R + \sum_{(\mu,\nu)\in Inv} \cos \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right) \tau_{\mu\nu}^R - \sum_{(\mu,\nu)\in B} 2 \sin \left( \dfrac{2\pi}{d}(k\nu - l\mu) \right) \tau_{\mu\nu}^I \geq 0}
+\end{align*}
+En realidad son $d^2-1$ variables libres si consideramos
+que $\tau_{00}^R =1$ para que el canal sea trace preserving. 
+Entonces, quedan $d^2$ desigualdades con $d^2-1$ variables libres, lo que define
+un poliedro en un espacio $d^2-1$ dimensional.
 
-\section*{Politopo}
-
-
+\section*{Poliedro}
 \begin{itemize}
 \item Al final de la sección anterior nos quedaron $d^2$ desigualdades para $d^2-1$ variables libres (son $d^2-1$ variables libres si consideramos que $\tau_{00} = 1$, ya que entonces $\tau_{00}^R = 1$ y no es libre). 
-\item Estas desigualdades definen un politopo formado por la intersección de $d^2$ hiperplanos en un espacio de $d^2-1$ dimensiones. 
-\item Usando las desigualdades, se pueden encontrar los vértices de este politopo para las variables libres. Luego, se pueden usar las igualdades \ref{ecs Im}, \ref{ecs Re} para recuperar también las variables dependientes y conseguir así los canales todas las taus complejas que definen al canal del vértice. \\
+\item Estas desigualdades definen un poliedro formado por la intersección de $d^2$ hiperplanos en un espacio de $d^2-1$ dimensiones.
+En particular, este espacio de $d^2-1$ dimensiones es el formado por
+las variables libres: $\tau_{\mu\nu}^R, \tau_{\mu\nu}^I$ (para $(\mu,\nu)\in B$) y $\tau_{\mu\nu}^R$ (para $(\mu,\nu \in Inv / (0,0)$).
 
-Eso justo hicimos para $d=3,4$ computacionalmente y encontramos que los vértices son las columnas de la matriz $a$. \\
+\item Usando las desigualdades, se pueden encontrar los vértices de este poliedro para las variables libres. 
+Luego, se pueden usar las igualdades \ref{ecs Im}, \ref{ecs Re} para recuperar también las variables dependientes 
+y conseguir así  todas las taus complejas que definen al canal del vértice. \\
 
-\item\textbf{Teorema:} \textit{Eso nos lleva a demostrar que en general los vértices del politopo de canales de weyl para qudits son justo las columnas de $a$}: \\
+Eso justo hicimos para $d=2,3,4,5$ computacionalmente y encontramos que los vértices son las columnas de la matriz $a$. \\
+
+\item\textbf{Teorema:} \textit{Eso nos lleva a demostrar que en general los vértices del poliedro de canales de weyl para qudits son justo las columnas de $a$}: \\
 
 \textbf{Dem:} Empezamos demostrando lo siguiente:
-
+\begin{itemize}
 \item \textbf{Las taus de un canal de Weyl  no pueden tener magnitud mayor a $1$:} Partimos de \ref{tau en termino de lambda}, que dice que:
 \begin{align*}
 \tau_{pq} = \dfrac{1}{d} \sum_{mn=0}^{d-1} \lambda_{mn} \omega_d^{pn-qm}.
@@ -343,15 +396,55 @@ Por lo tanto, los posibles valores de $\tau$ se encuentran en la envoltura conve
  (o a lo mejor sólo algunas de las raíces de la unidad).
  Luego, $\tau_{pq}$ no puede tener norma mayor que $1$, pues saldría de esta envoltura convexa.  \\
  
-Esto prueba que el politopo de canales de Weyl no puede incluir taus con norma mayor que $1$, pues ya no son canales.
+Esto prueba que el poliedro de canales de Weyl no puede incluir taus 
+con norma mayor que $1$, pues ya no son canales. 
+Por lo tanto, el poliedro está acotado (y entonces se llama un politopo).
  
-\item \textbf{Los canales MNU (que son columnas de la $a$) son vértices del politpo:} 
-Como las taus no pueden tener magnitud mayor a $1$, 
-los canales en las que todas las taus tienen magnitud igual a $1$ 
-(canales MNU) están en la frontera del politopo
-(pues, si aumentamos tantito alguna de las taus, 
-se salen del politopo de canales válidos por tener una tau de magnitud mayor que $1$). \\
+\item \textbf{Los canales MNU (que son columnas de la $a$ como se probó antes) son vértices del poliedro:}
+Tiene sentido intuitivamente porque en estos canales 
+todas las taus tienen magnitud igual a $1$ y como no puede haber canales
+con taus mayores, estos canales son puntos extremos. 
+
+Más formalmente, tomamos en cuenta que el espacio en el que se encuentra el poliedro
+es el formado por las variables libres:
+$\tau_{\mu\nu}^R, \tau_{\mu\nu}^I$ (para $(\mu,\nu)\in B$) y $\tau_{\mu\nu}^R$ (para $(\mu,\nu \in Inv / (0,0)$).
+
+Dado un punto $x$ en este espacio, su norma está dada por
+$|x|^2 = \sum_{\mu\nu\in B} |\tau_{\mu\nu}^R|^2 + |\tau_{\mu\nu}^I|^2 + \sum_{\mu\nu \in Inv / (0,0)} |\tau_{\mu\nu}^R|^2$. 
+
+Si consideramos solamente los puntos sobre el poliedro
+de canales de Weyl, esta norma es máxima cuando $x$ es un vértice del poliedro 
+( porque la norma es una función convexa y las funciones convexas 
+sobre un conjunto convexo alcanzan el máximo en un vértice). Es decir, un punto en el que esta norma sea
+máxima tiene que ser un vértice del poliedro.
+
+Finalmente, sabemos que en los canales de Weyl,  las normas de las taus
+están restringidas por $|\tau_{pq}|^2 \leq 1$.
+Pero de entre los puntos $x$ en el poliedro de canales de Weyl,
+los que maximizan la norma $|x|^2$ son los MNU, ya que tienen $|\tau_{pq}|^2 = 1$.
+Entonces, estos puntos son vértices del poliedro.
  
-\item \textbf{Los vértices del politopo son los canales MNU (y por tanto son las columnas de la $a$):} 
-Para el politopo tenemos un total de $d^2$ desigualdades que lo definen y con $d^2 - 1$ variables libres. Entonces, a lo mucho habrá $d^2$ vértices. Como ya encontramos $d^2$ vértices en el inciso anterior, concluimos que estos tienen que ser todos los vértices del politopo.
+\item \textbf{El politopo tiene a lo sumo $d^2$ vértices:} 
+Para el politopo tenemos un total de $d^2$ desigualdades que lo definen y con $d^2 - 1$ variables libres. Cada desigualdad define un hiperplano en el espacio de $d^2-1$ dimensiones y
+entonces un vértice del politopo se consigue con la intersección de $d^2-1$ de estos hiperplanos. \\
+
+Según el corolario 4.4.3 de ``An introduction to Convexity'' de Geir Dahl, 
+para un conjunto acotado y definido a partir de desigualdades como $Ax \leq b$, 
+la cantidad de vértices que tiene el conjunto es igual a $\begin{pmatrix}
+m \\
+n
+\end{pmatrix}$, con $m$ la cantidad de desigualdades y $n$ la de variables.
+Como se tienen $d^2$ desigualdades y $d^2-1$ variables, tenemos que hay $ \begin{pmatrix}
+d^2 \\
+d^2 - 1
+\end{pmatrix} = d^2$ vértices. \\
+ 
+\item \textbf{Los vértices del politopo corresponden con las columnas de $a$:}
+Ya vimos que las $d^2$ columnas de $a$ corresponden cada una con un 
+vértice del politopo. Luego, como vimos que a lo sumo
+hay $d^2$ vértices en el politopo, concluimos
+que los vértices del politopo son justamente los correspondientes
+a las columnas de $a$.
+\end{itemize}
+
 \end{itemize}
